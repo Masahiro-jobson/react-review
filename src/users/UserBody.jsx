@@ -1,0 +1,26 @@
+
+export const UserBody = (props) => {
+    const usersTemplate = props.users.map((value, index)=>{
+        const {name, age} = value;
+        return (
+        <div>
+            <div key={index} className="row border-bottom p-2">
+                <div className="col">
+                    {name}
+                </div>
+                <div className="col">
+                    {age}
+                </div>
+                <div className="col">
+                    <button onClick={()=>props.removeUser(index)} className="btn btn-primary">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        );
+    })
+
+    return(
+        <div>{usersTemplate}</div>
+    );
+}
